@@ -12,6 +12,33 @@ export const ViewsTable = () => {
   const threeMinutesAgo = new Date(Date.now() - 3 * 60 * 1000);
 
   useEffect(() => { }, [path])
+  
+  /*
+  return <table className={fontToshibaTxL1.className}>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Website</th>
+        <th>Page</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Views</td>
+        <td><Views path={"/"} sessionIdx={sessionIdx}/></td>
+        <td><Views path={path} sessionIdx={sessionIdx}/></td> 
+      </tr>
+      
+      <tr>
+        <td>Current</td>
+        <td><Views path={"/"} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td>
+        <td><Views path={path} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td> 
+      </tr>
+
+    </tbody>
+  </table>
+
+  */
 
   return <table className={fontToshibaTxL1.className}>
     <thead>
@@ -25,19 +52,8 @@ export const ViewsTable = () => {
       <tr>
         <td>Views</td>
         <td><Views path={"/"} sessionIdx={sessionIdx}/></td>
-        <td><Views path={path} sessionIdx={sessionIdx}/></td>
-        <td></td>
-        <td></td>
-      </tr>
-      {/*
-      <tr>
-        <td>Current</td>
-        <td><Views path={"/"} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td>
-        <td><Views path={path} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td>
-        <td></td>
-        <td></td>
-      </tr>
-    */}
+        <td><Views path={path} sessionIdx={sessionIdx}/></td> 
+      </tr> 
     </tbody>
   </table>
 }
