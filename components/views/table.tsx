@@ -29,6 +29,7 @@ export const ViewsTable = () => {
         <td></td>
         <td></td>
       </tr>
+      {/*
       <tr>
         <td>Current</td>
         <td><Views path={"/"} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td>
@@ -36,6 +37,7 @@ export const ViewsTable = () => {
         <td></td>
         <td></td>
       </tr>
+    */}
     </tbody>
   </table>
 }
