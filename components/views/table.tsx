@@ -9,6 +9,7 @@ import { Views } from "@/components/views"
 export const ViewsTable = () => {
   const sessionIdx = getCookie('sessionidx')?.toString() ?? "undefined";
   const path = usePathname()?.toString() + useSearchParams()?.toString();
+  const threeMinutesAgo = new Date(Date.now() - 3 * 60 * 1000);
 
   useEffect(() => { }, [path])
 
@@ -30,8 +31,8 @@ export const ViewsTable = () => {
       </tr>
       <tr>
         <td>Current</td>
-        <td><Views path={"/"} sessionIdx={sessionIdx}/></td>
-        <td><Views path={path} sessionIdx={sessionIdx}/></td>
+        <td><Views path={"/"} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td>
+        <td><Views path={path} sessionIdx={sessionIdx} date={threeMinutesAgo}/></td>
         <td></td>
         <td></td>
       </tr>

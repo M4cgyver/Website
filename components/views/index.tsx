@@ -8,15 +8,16 @@ import { getCookie } from 'cookies-next';
 interface ViewsProps {
   path?: string;
   sessionIdx?: string;
+  date?: Date
 }
 
-export const Views: React.FC<ViewsProps> = ({ path, sessionIdx }) => {
+export const Views: React.FC<ViewsProps> = ({ path, sessionIdx, date }) => {
   const pathDefined = path ?? (usePathname()?.toString() + useSearchParams()?.toString())
   const sessionIdxDefined = sessionIdx ?? getCookie('sessionidx')?.toString() ?? "undefined";
 
   const { data, isLoading, isValidating } = useSWR(
     ["views", path ?? "/"],
-    () => addAndGetViews({ sessionIdx: sessionIdxDefined, path: pathDefined, valid: true }),
+    () => addAndGetViews({ sessionIdx: sessionIdxDefined, path: pathDefined, valid: true, datetime: date }),
   );
 
   const body = isLoading || isValidating ? "#" : data;
