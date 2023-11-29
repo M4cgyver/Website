@@ -1,0 +1,49 @@
+ Container refractor1-postgres-1  Running
+ Container refractor1-pgadmin-1  Running
+ Container refractor1-webserver-1  Recreate
+ Container refractor1-webserver-1  Recreated
+ Container refractor1-webarchive-1  Recreate
+ Container refractor1-webarchive-1  Recreated
+Attaching to refractor1-pgadmin-1, refractor1-postgres-1, refractor1-webarchive-1, refractor1-webserver-1
+refractor1-webserver-1   | yarn run v1.22.19
+refractor1-webserver-1   | $ /app/node_modules/.bin/prisma generate
+refractor1-webarchive-1  | nop
+refractor1-webarchive-1 exited with code 0
+refractor1-webserver-1   | Environment variables loaded from .env
+refractor1-webserver-1   | Prisma schema loaded from prisma/schema.prisma
+refractor1-webserver-1   | 
+refractor1-webserver-1   | ✔ Generated Prisma Client (5.1.1 | library) to ./node_modules/@prisma/client in 52ms
+refractor1-webserver-1   | You can now start using Prisma Client in your code. Reference: https://pris.ly/d/client
+refractor1-webserver-1   | ```
+refractor1-webserver-1   | import { PrismaClient } from '@prisma/client'
+refractor1-webserver-1   | const prisma = new PrismaClient()
+refractor1-webserver-1   | ```
+refractor1-webserver-1   | 
+refractor1-webserver-1   | Done in 1.46s.
+refractor1-webserver-1   | yarn run v1.22.19
+refractor1-webserver-1   | $ /app/node_modules/.bin/prisma migrate dev -n auto
+refractor1-webserver-1   | Environment variables loaded from .env
+refractor1-webserver-1   | Prisma schema loaded from prisma/schema.prisma
+refractor1-webserver-1   | Datasource "db": PostgreSQL database "website", schema "public" at "postgres:5432"
+refractor1-webserver-1   | 
+refractor1-webserver-1   | 
+refractor1-postgres-1    | 2023-09-03 07:41:56.578 UTC [73] LOG:  could not receive data from client: Connection reset by peer
+refractor1-postgres-1    | 2023-09-03 07:41:56.864 UTC [63] LOG:  checkpoint starting: immediate force wait
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [63] LOG:  request to flush past end of generated WAL; request 0/2A5BA60, current position 0/1D76140
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [63] CONTEXT:  writing block 0 of relation base/1/2619_vm
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [63] ERROR:  xlog flush request 0/2A5BA60 is not satisfied --- flushed only to 0/1D76140
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [63] CONTEXT:  writing block 0 of relation base/1/2619_vm
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [74] ERROR:  checkpoint request failed
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [74] HINT:  Consult recent messages in the server log for details.
+refractor1-postgres-1    | 2023-09-03 07:41:56.883 UTC [74] STATEMENT:  DROP DATABASE IF EXISTS "prisma_migrate_shadow_db_29b927b7-6495-4986-a81a-ea9d9f5cbd3a"
+refractor1-webserver-1   | Error: db error: ERROR: checkpoint request failed
+refractor1-webserver-1   | HINT: Consult recent messages in the server log for details.
+refractor1-webserver-1   |    0: schema_core::state::DevDiagnostic
+refractor1-webserver-1   |              at schema-engine/core/src/state.rs:270
+refractor1-webserver-1   | 
+refractor1-webserver-1   | 
+refractor1-webserver-1   | error Command failed with exit code 1.
+refractor1-webserver-1   | info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+refractor1-webserver-1 exited with code 1
+refractor1-postgres-1    | 2023-09-03 07:42:25.258 UTC [77] ERROR:  index "pg_class_oid_index" contains unexpected zero page at block 0
+refractor1-postgres-1    | 2023-09-03 07:42:25.258 UTC [77] HINT:  Please REINDEX it.

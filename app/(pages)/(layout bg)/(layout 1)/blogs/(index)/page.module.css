@@ -1,0 +1,28 @@
+.blogs{
+    padding: 4px;
+}
+
+.blogs img{
+    float: left;
+    margin-right: 4px;
+}
+
+.blogs h1 {
+    margin: 0;
+    padding-top: 3px;
+    font-size: 1.35em;
+    text-decoration: underline;
+
+    color:rgb(220, 241, 239);
+}
+
+.blogs h2 {
+    margin: 0;
+    margin-top: 12px; 
+    font-size: .85em;
+}
+
+.blogs time {
+    font-size: 14px;
+    color:blanchedalmond;
+}

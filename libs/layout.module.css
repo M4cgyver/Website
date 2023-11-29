@@ -1,0 +1,270 @@
+/* Fonts */
+/*
+@font-face {
+    font-family: 'Mario World Pixel Font';
+    src: url('/static/fonts/typefacemarioworldpixelfilledregular-rgvmx.ttf') format('truetype'),
+        url('/static/fonts/typefacemarioworldpixelfilledregular-yz84q.otf') format('opentype'),
+        url('/static/fonts/typefacemarioworldpixeloutlineregular-k75rw.otf') format('opentype'),
+        url('/static/fonts/typefacemarioworldpixeloutlineregular-mvzkp.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mario World Pixel Color Font';
+    src: url('/static/fonts/MarioWorldPixelColor-3zBwX.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Terminal';
+    src: url('/static/fonts/windows_command_prompt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ToshibaTxL1';
+    src: url('/static/fonts/MxPlus_ToshibaTxL1_8x16.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pixel Pirate Font';
+    src: url('/static/fonts/PixelPirateRegular-PXYZ.ttf');
+}
+
+@font-face {
+    font-family: 'EagleSpCGA_Alt2-2y';
+    src: url('/static/fonts/Web437_EagleSpCGA_Alt2-2y.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Delicious Handrawn';
+    src: url('/static/fonts/DeliciousHandrawn-Regular.ttf');
+}
+*/
+
+/* General Styles */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -128;
+    image-rendering: pixelated;
+}
+
+.backgroundDefault {
+    visibility: visible;
+}
+
+.backgroundDark {
+    visibility: hidden;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 55vw;
+    min-width: 800px;
+    padding: 8px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 4px;
+    order: 1 !important;
+}
+
+.slideshow {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    order: 3;
+}
+
+.title h1 {
+    font-family: var(--font-mario), sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    margin-top: 0.875em;
+    margin-left: 0.225vw;
+    margin-bottom: 0;
+    text-shadow: -1px 1px 1px #0072c6, 1px -1px 1px #0072c6;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+}
+
+.title h2 {
+    font-family: var(--font-toshibatxl1), sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.05em;
+    margin-top: -0.255em;
+    margin-left: 0.175em;
+    margin-bottom: 0;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    font-weight: normal;
+}
+
+.children,
+.navigation,
+.frens,
+.chatbox {
+    width: 185px;
+    margin-bottom: 12px;
+}
+.navigation2 {
+    font-family: var(--font-toshibatxl1), Courier, monospace;
+    font-size: 16px;
+    order: 2;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.navigation2 ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.navigation2 ul li {
+    width: 19%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 0;
+    text-align: center; /* Center the text horizontally within the list items */
+    transition: transform 0.1s; /* Add a smooth transition effect for the transform property */
+    background-color: rgba(41,40,40,.75);
+}
+
+.navigation2 ul li a{
+    display: block; /* or display: inline-block; */
+    width: 100%;
+    height: 100%; 
+    color:antiquewhite;
+}
+
+.navigation2 ul li:nth-child(1) {
+    border-bottom: 2px solid #8B5742; /* Dark Pastel Red (Saddle Brown) */
+}
+
+.navigation2 ul li:nth-child(2) {
+    border-bottom: 2px solid #6A5ACD; /* Dark Pastel Blue (Slate Blue) */
+}
+
+.navigation2 ul li:nth-child(3) {
+    border-bottom: 2px solid #8F9779; /* Dark Pastel Green (Dark Olive Green) */
+}
+
+.navigation2 ul li:nth-child(4) {
+    border-bottom: 2px solid #9370DB; /* Dark Pastel Purple (Dark Orchid) */
+}
+
+.navigation2 ul li:nth-child(5) {
+    border-bottom: 2px solid #8B008B; /* Dark Magenta (remains the same) */
+}
+
+.navigation2 ul li:hover {
+    transform: scale(1.05); /* Increase the scale on hover */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation2 ul ul {
+    display: none;
+}
+
+.children {
+    order: 6;
+    flex-grow: 1;
+}
+
+.lefths {
+    order: 3;
+    width: 190px;
+    margin-right: 8px;
+}
+
+.footer {
+    overflow: hidden;
+    clear: left;
+    width: 100%;
+    padding: 24px 0 8px;
+    order: 7;
+    margin-bottom: 50vh;
+    text-align: center;
+}
+
+.navigation ul {
+    font-size: 16px;
+    font-family: var(--font-toshibatxl1);
+
+    padding-top: 2px;
+    padding-left: 9px;
+    margin: 0;
+    margin-bottom: 2px;
+    list-style-type: none;
+    list-style-type: "→";
+}
+
+.navigation ul ul {
+    padding-left: 20px;
+}
+
+.navigation a:hover {
+    text-decoration: none;
+    padding: 8px;
+}
+
+.footer p {
+    font-family: var(--font-toshibatxl1);
+    padding: 0;
+    padding-bottom: 2px;
+    margin: 0;
+    animation: 25s footerpspin infinite;
+    font-size: min(1.5vw, 1.5vh);
+}
+
+/* Media Queries */
+@media screen and (min-width: 1910px) {
+    .title h1 {
+        font-size: 32px;
+    }
+
+    .title h2 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1670px) and (max-width: 1909px) {
+    .title h1 {
+        font-size: 22px;
+    }
+
+    .title h2 {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .backgroundDefault {
+        visibility:hidden;
+    }
+
+    .backgroundDark {
+        visibility: visible;
+    }
+
+    .navigation li {
+        color: rgb(182, 178, 178);
+    }
+
+    .navigation a {
+        color: lightblue;
+    }
+
+    .navigation a:hover {
+        color: lightskyblue;
+    }
+}

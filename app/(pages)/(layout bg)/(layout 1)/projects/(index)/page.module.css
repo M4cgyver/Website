@@ -1,0 +1,55 @@
+.projects {
+    display: grid;
+    gap: 5px;
+    margin: 0px;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    width: 100%;
+}
+
+.project {
+    position: relative;
+    background-color: #555252;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    /* Add transition to properties */
+}
+
+.project:hover {
+    transform: scale(1.1);
+    /* Increase size on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    /* Add a subtle shadow on hover */
+    background-color: #6c6b6b;
+    /* Lighter color on hover */
+    z-index: 4;
+}
+
+
+.project img {
+    width: 100%;
+    aspect-ratio: 1920/1080;
+    border-radius: 4px;
+    height: auto;
+}
+
+.project .description {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.project h1 {
+    padding-left: 8%;
+    padding-right: 8%;
+    font-size: 24px;
+    margin: 0;
+}
+
+.project h2 {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    font-size: 12px;
+    margin: 0;
+}

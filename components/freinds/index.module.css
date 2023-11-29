@@ -1,0 +1,7 @@
+.frens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; /* Evenly space items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow items to wrap around */
+}

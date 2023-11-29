@@ -1,0 +1,34 @@
+body {
+    background-color: #b85f87;
+    overflow-y: scroll; 
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #002d75 #090e34;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #090e34;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #002d75;
+    border-radius: 2px;
+    border: 2px groove #143848;
+}
+
+/* Add a media query for screens larger than 1670px but smaller than 1910px */
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color: #11293e;
+    }
+}

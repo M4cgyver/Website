@@ -1,0 +1,38 @@
+.archiveViewerOffline iframe {
+    width: 100%;
+    aspect-ratio: 1920 / 1080; 
+    resize: vertical;
+    background-color: aliceblue;
+}
+
+.archiveViewerOffline form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.archiveViewerOffline form .button {
+    width: 100%;
+}
+
+.archiveViewerOffline table,
+.archiveViewerOffline td,
+.archiveViewerOffline th {
+    border: 1px solid;
+
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+  
+.uris,
+.uris table {
+    width: 100%;
+}
+
+
+.files,
+.files table {
+    width: 100%;
+}

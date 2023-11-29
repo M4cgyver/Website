@@ -1,0 +1,79 @@
+/* page.module.css */
+
+.archive {
+    color: black;
+}
+
+.archive a {
+    text-decoration: none;
+}
+
+.archive a:hover {
+    text-decoration: underline;
+}
+
+.archive table {
+    color: black; 
+    width: 100%;
+}
+
+.archive .cachingRow {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.warcExplanation {
+    margin-top: 8px;
+    border-radius: 8px;
+    background-color: #D8D2CC;
+    padding: 4px;
+    color:white;
+}
+
+.warcExplanation .description {
+    background-color: #E5DED7;
+    border-radius: 4px;
+    padding: 2px; /* Changed from 2ppx to 2px */
+}
+
+.warcExplanation .search {
+    background-color: #F5EDE5;
+    border-radius: 4px;
+    padding: .25em;
+}
+
+.warcExplanation .table {
+    background-color: #F5EDE5;
+    border-radius: 4px;
+    padding: .25em;
+}
+
+.warcExplanation .table table,
+.warcExplanation .table th,
+.warcExplanation .table td {
+    border: 1px solid black; /* Changed from "border: 1px black;" to "border: 1px solid black;" */
+    padding: 1px; /* Add padding to th and td elements for spacing */
+}
+
+@media (prefers-color-scheme: dark) {
+    .archive {
+        color: aliceblue;
+    }
+
+    .warcExplanation {
+        background-color: #68635f;
+    }
+
+    .warcExplanation .description {
+        background-color: #7c7166;
+    }
+
+    .warcExplanation .search {
+        background-color: #8f8d8b;
+    }
+
+    .warcExplanation .table {
+        background-color: #8f8d8b;
+        border-radius: 4px;
+        padding: .25em;
+    }
+}

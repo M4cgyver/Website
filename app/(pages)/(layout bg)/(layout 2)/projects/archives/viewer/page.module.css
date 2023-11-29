@@ -1,0 +1,13 @@
+
+.archivesearch { 
+    width: 100%
+}
+
+.archivesearch iframe {
+    aspect-ratio: 1920 / 1080; 
+    resize: vertical;
+}
+
+.infotable {
+    border: 1px solid;
+  }

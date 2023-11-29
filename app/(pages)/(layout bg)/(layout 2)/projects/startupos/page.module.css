@@ -1,0 +1,17 @@
+ .description {
+    padding: 4px;
+    padding-bottom: 2px;
+}
+
+.description h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.description h2 {
+    margin-bottom: 0;
+}
+
+.description ul {
+    margin: 0
+}

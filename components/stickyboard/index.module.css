@@ -1,0 +1,140 @@
+.grid {
+  color: black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.action {
+  text-align: left;
+  color: dodgerblue;
+}
+
+.note {
+  position: relative;
+  min-height: 175px;
+  width: 175px;
+  padding: 0.35rem;
+  border-radius: 0px 0px 2px 2px;
+  background: linear-gradient(to bottom,
+      rgb(219, 219, 178),
+      rgb(219, 219, 178) 20%,
+      #ffc 30%,
+      #ffc);
+  margin: 0.25rem;
+  color: black;
+  /* Default text color */
+}
+
+@media (prefers-color-scheme: dark) {
+  .note {
+    background: linear-gradient(to bottom,
+        rgb(46, 96, 99),
+        rgb(46, 96, 99) 20%,
+        rgb(61, 130, 133) 30%,
+        rgb(61, 130, 133));
+    color: aliceblue;
+  }
+}
+
+.note form {
+  display: flex;
+  flex-direction: column;
+}
+
+.note form label {
+  margin-top: 0.5em;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.note form .title {
+  margin-top: 0.65em;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border: 0;
+}
+
+.note form .content {
+  margin-top: 0.7em;
+  padding: 6px;
+  font-size: 12px;
+  line-height: 12px;
+  min-height: 72px;
+}
+
+.note form .submit {
+  margin: 2em;
+  margin-top: .2em;
+  margin-bottom: .2em;
+  padding: 4px;
+  background-color: rgba(255, 127, 80, 0.192);
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .note form .submit {
+    color: aliceblue
+  }
+}
+
+.note form .btnSpacer {
+  height: 12px;
+  width: 100%;
+}
+
+.note h1 {
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.note p {
+  margin-top: .7em;
+  font-size: 20px;
+  line-height: 16px;
+  font-family: 'Reenie Beanie', cursive;
+  font-weight: lighter;
+  word-wrap: break-word;
+  padding-right: 6px;
+  margin-bottom: 32px;
+  width: 100%;
+
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
+.note iframe {
+  width: 100%;
+  aspect-ratio: 1920/1080;
+}
+
+.note h3 {
+  font-size: .5em;
+  color: grey;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  color: grey;
+}
+
+@media (prefers-color-scheme: dark) {
+  .note h3 {
+    color: silver;
+  }
+}

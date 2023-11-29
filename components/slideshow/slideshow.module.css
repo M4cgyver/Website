@@ -1,0 +1,35 @@
+.slideshow {
+  overflow-x: hidden; 
+}
+
+.slideshow .slides {
+  white-space: nowrap; /* prevents the slides from wrapping */
+}
+
+.slideshow .slide {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1%;
+  transition: all 0.3s ease; /* Add a smooth transition to all properties */
+}
+ 
+
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* center the buttons horizontally */ 
+
+}
+
+.button {
+  width: min(1vw, 1vh);
+  height: min(1vw, 1vh);
+  border-radius: 50%; /* make the buttons circular */
+  border: none;
+  margin: 0 1rem; /* add a margin of 1rem to the left and right of each button */
+  background-color: darkpurple; /* set the background color of the buttons to dark purple */
+  color: white; /* set the font color to white */
+}
+
+.button:hover{
+  cursor: pointer;
+}

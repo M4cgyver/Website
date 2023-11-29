@@ -1,0 +1,17 @@
+#code-globalsdcss,
+#code-layoutdmoduledcss,
+#code-layoutdtsx,
+#code-aboutspagedtsx,
+#code-contactspagedtsx,
+#code-pagedtsx{
+    display: none;
+}
+
+#code-globalsdcss:target,
+#code-layoutdmoduledcss:target,
+#code-layoutdtsx:target,
+#code-aboutspagedtsx:target,
+#code-contactspagedtsx:target,
+#code-pagedtsx:target {
+    display: flex;
+} 

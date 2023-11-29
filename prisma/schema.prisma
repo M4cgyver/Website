@@ -1,0 +1,69 @@
+// This is your Prisma schema file.
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js" 
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Views {
+  id          Int      @id @default(autoincrement())
+  sessionIdx  String
+  path        String
+  valid       Boolean  @default(true)
+  datetime    DateTime @default(now())
+}
+
+model Sticky {
+  id          Int      @id @default(autoincrement())
+  documentId  String
+  username    String?
+  content     String?
+  sessionIdx  String?
+  datetime    DateTime @default(now())
+}
+
+model CatBoxMessage {
+  id          Int      @id @default(autoincrement())
+  documentId  String
+  username    String?
+  content     String?
+  sessionIdx  String?
+  datetime    DateTime @default(now())
+}
+
+model WarcFileProgress {
+  id          Int       @id @default(autoincrement())
+  fileName    String    @unique
+  size        BigInt
+  offset      BigInt
+  status      String
+}
+
+model HttpHeaderEntry {
+  id                     Int      @id @default(autoincrement())
+  fileName               String   @default("")
+  status                 Int
+  datetime               DateTime?
+  pragma                 String?
+  server                 String?
+  setCookie              String?
+  contentType            String?
+  lastModified           DateTime?
+  contentSecurityPolicy  String?
+  eTag                   String?
+  location               String?
+  warcType               String?
+  warcRecordID           String?
+  warcWarcinfoID         String?
+  warcConcurrentTo       String?
+  warcTargetURI          String
+  warcDate               DateTime?
+  warcIpAddress          String?
+  warcOffset             BigInt
+  httpOffset             BigInt
+}

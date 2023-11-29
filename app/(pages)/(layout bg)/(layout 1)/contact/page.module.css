@@ -1,0 +1,27 @@
+.contact {
+    position: relative;
+    aspect-ratio: 1920/1080;
+}
+
+.contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.contact h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.contact .snek {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: .1;
+}
