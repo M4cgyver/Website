@@ -1,64 +1,25 @@
 "use client";
 
-import { cookies } from 'next/headers';
-import { Suspense, use, useEffect, useState } from 'react';
+import useSWR, { SWRConfiguration } from 'swr'; // Importing SWRConfiguration for better type safety.
+import { addAndGetViews } from './actions';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { getCookie } from 'cookies-next';
-import { usePathname } from 'next/navigation';
-import { addView, getViews } from './actions';
-import { fontToshibaTxL1 } from '@/libs/fonts';
 
-export default function Views() {
-  const sessionIdx = (getCookie('sessionidx') ?? "undefined").toString();
-  const path = usePathname();
-
-  const [viewsStats, setViewsStats] = useState<any>(['...', '...', '...', '...']);
-  const [viewsSite, viewsPath, viewsSiteCurrent, viewsPathCurrent] = viewsStats;
-
-  const getViewsState = async () => {
-    try {
-
-      const views = await Promise.all([
-        getViews({}),
-        getViews({ path: path }),
-        getViews({ datetime: new Date(Date.now() - 1000 * 60 * 5) }),
-        getViews({ path: path, datetime: new Date(Date.now() - 1000 * 60 * 5) }),
-      ]);
-
-      setViewsStats(views);
-
-    } catch (error) {
-      console.error('Error fetching views:', error);
-    }
-  }
-
-  useEffect(() => {
-    getViewsState();
-    addView({sessionIdx: sessionIdx, path: path});
-  }, [path]);
-
-  return <table className={fontToshibaTxL1.className}>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Website</th>
-        <th>Page</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Views</td>
-        <td>{viewsSite}</td>
-        <td>{viewsPath}</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Current</td>
-        <td>{viewsSiteCurrent}</td>
-        <td>{viewsPathCurrent}</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+interface ViewsProps {
+  path?: string;
+  sessionIdx?: string;
 }
+
+export const Views: React.FC<ViewsProps> = ({ path, sessionIdx }) => {
+  const pathDefined = path ?? (usePathname()?.toString() + useSearchParams()?.toString())
+  const sessionIdxDefined = sessionIdx ?? getCookie('sessionidx')?.toString() ?? "undefined";
+
+  const { data, isLoading, isValidating } = useSWR(
+    ["views", path ?? "/"],
+    () => addAndGetViews({ sessionIdx: sessionIdxDefined, path: pathDefined, valid: true }),
+  );
+
+  const body = isLoading || isValidating ? "#" : data;
+
+  return <>{body}</>;
+};

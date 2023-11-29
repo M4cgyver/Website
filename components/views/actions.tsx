@@ -25,3 +25,8 @@ export const addView = ({ sessionIdx, path }: { sessionIdx: string, path?: strin
         },
     });
 };
+
+export const addAndGetViews = ({ sessionIdx, path, valid, datetime }: { sessionIdx: string, path?: string, valid?: boolean, datetime?: Date }): Promise<number> => {
+    const ret = addView({ sessionIdx: sessionIdx, path:path }).then(() => getViews({path:path, valid:valid, datetime:datetime}));
+    return ret;
+}

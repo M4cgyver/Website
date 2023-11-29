@@ -2,8 +2,8 @@ import styles from "@/libs/layout.module.css"
 import stylesWin9x from "@/libs/win98.module.css"
 
 import Navigation from "@/components/navigation"
-import Frens from "@/components/freinds" 
-import Views from "@/components/views"
+import Frens from "@/components/freinds"  
+import { ViewsTable } from "@/components/views/table"
 
 export default function RootLayout({
   children,
@@ -21,7 +21,7 @@ export default function RootLayout({
 
       <div className={`${styles.frens} ${stylesWin9x.window}`}>
         <div className={stylesWin9x.title}>Views</div>
-        <Views/>
+        <ViewsTable/>
       </div>
 
       <div className={`${styles.frens} ${stylesWin9x.window}`}>

@@ -12,7 +12,8 @@ import imageMikeOs from "@/public/static/images/mikeos.gif"
 import imageM4cgyer from "@/public/static/images/m4cgyver.png"
 import imageLink from "@/public/static/images/icons8-link-64.png"
 import Stickyboard from '@/components/stickyboard';
-import Views from '@/components/views';
+import { Views } from '@/components/views';
+import { ViewsTable } from '@/components/views/table';
 
 export const metadata: Metadata = {
     title: 'Startup OS Online VM',
@@ -94,7 +95,7 @@ export default async function StartupOsProjectPage() {
 
                         <div className={styesWin98.window} style={{ width: 200, marginRight: 20, marginTop: 18 }}>
                             <div className={styesWin98.title}>Views</div>
-                            <Views />
+                            <ViewsTable />
                         </div>
                     </div>
 
@@ -119,7 +120,6 @@ export default async function StartupOsProjectPage() {
                 <div className={styesWin98.window} style={{ marginTop: "12px" }} >
                     <Stickyboard documentId="startupos" routePath="/projects/startupos" />
                 </div>
-
             </main>
         </>
     );

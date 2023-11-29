@@ -20,6 +20,7 @@ import Image from 'next/image';
 import Overlay from '@/components/overlay';
 import { cookies } from 'next/headers';
 import { addView, getCachedFiles, getCachedViews, getFiles } from './actions';
+import { Views } from '@/components/views';
 
 export const metadata: Metadata = {
     title: 'NextJS App Ordered Layouts',
@@ -51,7 +52,6 @@ export default async function BlogsNextjsAppOrderedLayouts() {
     const cookiesStore = cookies();
     const sessionIdx = cookiesStore.get("sessionidx")?.value;
     const files = await getCachedFiles();
-    const views = await getCachedViews("/blogs/nextjs13-ordered-layout");
 
     if (sessionIdx) addView(sessionIdx, "/blogs/nextjs13-ordered-layout");
 
@@ -66,7 +66,7 @@ export default async function BlogsNextjsAppOrderedLayouts() {
                 <br />
                 <div style={{ position: "relative" }}>
                     <span className={fontHP100LX6x8.className} style={{ float: 'left', fontSize: 18, marginLeft: 2, marginTop: 2, color: "blanchedalmond" }}>Author(s): M4cgyver</span>
-                    <span className={fontHP100LX6x8.className} style={{ float: 'right', fontSize: 8, marginRight: 2, marginTop: 5, color: "blanchedalmond", textAlign: "right" }}>Published(s): <DateTimeLocally date={new Date('10/24/2023, 10:58:45 PM')} /> <br />Total Views: {views}</span>
+                    <span className={fontHP100LX6x8.className} style={{ float: 'right', fontSize: 8, marginRight: 2, marginTop: 5, color: "blanchedalmond", textAlign: "right" }}>Published(s): <DateTimeLocally date={new Date('10/24/2023, 10:58:45 PM')} /> <br />Total Views: <Views /> </span>
                 </div>
             </div>
 
