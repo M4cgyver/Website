@@ -16,7 +16,7 @@ export const Views: React.FC<ViewsProps> = ({ path, sessionIdx, date }) => {
   const sessionIdxDefined = sessionIdx ?? getCookie('sessionidx')?.toString() ?? "undefined";
 
   const { data, isLoading, isValidating } = useSWR(
-    ["views", path ?? "/"],
+    ["views", date?.getTime(), path ?? "/"],
     () => addAndGetViews({ sessionIdx: sessionIdxDefined, path: pathDefined, valid: true, datetime: date }),
   );
 
