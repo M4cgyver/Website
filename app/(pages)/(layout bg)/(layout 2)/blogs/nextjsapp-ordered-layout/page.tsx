@@ -53,7 +53,7 @@ export default async function BlogsNextjsAppOrderedLayouts() {
     const sessionIdx = cookiesStore.get("sessionidx")?.value;
     const files = await getCachedFiles();
 
-    if (sessionIdx) addView(sessionIdx, "/blogs/nextjs13-ordered-layout");
+    if (sessionIdx) addView(sessionIdx, '/blogs/nextjsapp-ordered-layout');
 
     //console.log(files);
 
@@ -334,7 +334,7 @@ export default async function BlogsNextjsAppOrderedLayouts() {
 
                 <div className={`${stylesWin9x.window} ${stylesLayout.children} ${styles.content}`} style={{ flex: 1, width: "100%" }}>
                     <div className={stylesWin9x.title}>Sticky Board</div>
-                    <Stickyboard documentId='nextjs13-ordered-layout' routePath='/blogs/blogs/nextjs13-ordered-layout' />
+                    <Stickyboard documentId='nextjs13-ordered-layout' routePath='/blogs/nextjsapp-ordered-layout' />
                 </div>
 
             </div>
